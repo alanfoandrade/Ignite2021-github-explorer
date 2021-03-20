@@ -5,13 +5,18 @@ import '../styles/repositories.scss';
 
 import RepositoryItem from "./RepositoryItem";
 
+interface IRepository {
+  name: string;
+  description: string;
+  html_url: string;
+}
+
 function RepositoryList() {
-  const [repositories, setRepositories] = useState([])
+  const [repositories, setRepositories] = useState<IRepository[]>([])
 
   useEffect(() => {
     async function loadRepositories() {
       const { data } = await api.get('/orgs/rocketseat/repos');
-
 
       setRepositories(data)
     }
