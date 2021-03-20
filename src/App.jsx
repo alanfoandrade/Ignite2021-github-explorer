@@ -1,10 +1,17 @@
+import Counter from './components/Counter';
+import RepositoryList from './components/RepositoryList';
 import './styles/global.scss';
 
 // import { Container } from './styles';
 
 function App() {
 
-  return <h1>Olá Mundo!</h1>;
+  return (
+    <>
+      <RepositoryList />
+      <Counter />
+    </>
+  );
 }
 
 export default App;
